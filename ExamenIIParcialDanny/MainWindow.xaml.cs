@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Net.Mail;
 namespace ExamenIIParcialDanny
 {
     /// <summary>
@@ -68,7 +69,8 @@ namespace ExamenIIParcialDanny
             finally
             {
                 sqlconnection.Close();
-               
+                MostrarUsuario();
+
             }
         }
 
@@ -135,7 +137,40 @@ namespace ExamenIIParcialDanny
 
         private void BtnActualizarDatos_Click(object sender, RoutedEventArgs e)
         {
+            if (txtnombre.Text == string.Empty && txtapellido.Text == string.Empty &&
+            txtusuario.Text == string.Empty &&
+            txtcontra.Text == string.Empty &&
+            txtcorreo.Text == string.Empty &&
+            txttipo.Text == string.Empty) { MessageBox.Show("Debe ingresar todos los valores");  }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE FROM Usuarios.usuario SET nombre = @nombre apellido=@apellido nombreUsuario=@usuario contrasenia=@contra correo=@correo tipoUsuario=@us WHERE id =@id";
+                    SqlCommand sqlcom = new SqlCommand(query, sqlconnection);
+                    sqlconnection.Open();
+                    sqlcom.Parameters.AddWithValue("@nombre", txtnombre.Text);
+                    sqlcom.Parameters.AddWithValue("@apellido", txtapellido.Text);
+                    sqlcom.Parameters.AddWithValue("@usuario", txtusuario.Text);
+                    sqlcom.Parameters.AddWithValue("@contra", txtcontra.Text);
+                    sqlcom.Parameters.AddWithValue("@us", txtusuario.Text);
+                    sqlcom.Parameters.AddWithValue("@correo", txtcorreo.Text);
 
+                    sqlcom.Parameters.AddWithValue("@id", lbUsuarios.SelectedValue); //ITEM ES TODO EL VALOR VALUE ES EL VALOR EN ESPECIFICO
+                    sqlcom.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message.ToString());
+                }
+                finally
+                {
+                    sqlconnection.Close();
+                    MostrarUsuario();
+
+                }
+            }
         }
     }
 }

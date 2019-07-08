@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ExamenIIParcialDanny"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid  Background="LightSkyBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="190"/>
             <ColumnDefinition Width="*"/>
@@ -21,8 +21,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
         <Label Content="Datos de Usuario" FontSize="22" Grid.Column="1" Grid.Row="0"/>
         <Label Content="Usuarios" FontSize="22" Grid.Column="3" Grid.Row="0"/>
@@ -46,7 +45,7 @@
         <Button Name="btnEliminarDatos" Content="Eliminar" Grid.Column="2" Grid.Row="2" Margin="6" Width="170" Click="BtnEliminarDatos_Click"/>
         <Button Name="btnActualizarDatos" Content="Actualizar" Grid.Column="2" Grid.Row="3" Margin="6" Width="170" Click="BtnActualizarDatos_Click"/>
         <!--Listbox para mostrar los datos-->
-        <ListBox Name="lbUsuarios" Grid.Column="3" Grid.Row="1" Grid.RowSpan="6" Margin="3" Width="180"/>
+        <ListBox Name="lbUsuarios" Grid.Column="3" Grid.Row="1" Grid.RowSpan="6" Margin="3" Width="180" Height="350"/>
 
 
 
