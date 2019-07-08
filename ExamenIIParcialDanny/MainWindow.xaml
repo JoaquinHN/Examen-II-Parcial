@@ -8,9 +8,47 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="190"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Datos de Usuario" FontSize="22" Grid.Column="1" Grid.Row="0"/>
+        <Label Content="Usuarios" FontSize="22" Grid.Column="3" Grid.Row="0"/>
+        <Label Content="Nombres:" Grid.Column="0" Grid.Row="1" FontSize="20"/>
+        <Label Content="Apellidos" Grid.Column="0" Grid.Row="2" FontSize="20"/>
+        <Label Content="Nombre de Usuario:" Grid.Column="0" Grid.Row="3" FontSize="20"/>
+        <Label Content="Correo Electronico:" Grid.Column="0" Grid.Row="4" FontSize="20"/>
+        <Label Content="Tipo de Usuario:" Grid.Column="0" Grid.Row="5" FontSize="20"/>
+        <Label Content="Estado:" Grid.Column="0" Grid.Row="6" FontSize="20"/>
+        <!--Textbox-->
+        <TextBox Name="txtnombre" Grid.Column="1" Grid.Row="1"  Width="180" Height="35"/>
+        <TextBox Name="txtapellido" Grid.Column="1" Grid.Row="2"  Width="180" Height="35"/>
+        <TextBox Name="txtusuario" Grid.Column="1" Grid.Row="3"  Width="180" Height="35"/>
+        <TextBox Name="txtcorreo" Grid.Column="1" Grid.Row="4"  Width="180" Height="35"/>
+        <TextBox Name="txttipo" Grid.Column="1" Grid.Row="5"  Width="180" Height="35"/>
+        <TextBox Name="txtestado" Grid.Column="1" Grid.Row="6"  Width="180" Height="35"/>
+        <!--Botones-->
+        <Button Name="btnGuardarDatos" Content="Guardar" Grid.Column="2" Grid.Row="1" Margin="6" Width="170" Click="btnGuardar"/>
+        <Button Name="btnEliminarDatos" Content="Eliminar" Grid.Column="2" Grid.Row="2" Margin="6" Width="170"/>
+        <Button Name="btnActualizarDatos" Content="Actualizar" Grid.Column="2" Grid.Row="3" Margin="6" Width="170"/>
+        <!--Listbox para mostrar los datos-->
+        <ListBox Name="lbUsuarios" Grid.Column="3" Grid.Row="1" Grid.RowSpan="6" Margin="3" Width="180"/>
+
+
+
+
+
     </Grid>
 </Window>
