@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExamenIIParcialDanny"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Danny's Exam" Height="450" Width="800">
     <Grid  Background="LightSkyBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="190"/>
